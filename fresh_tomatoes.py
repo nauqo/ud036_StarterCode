@@ -9,7 +9,7 @@ main_page_head = '''
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>Top Popular Movies</title>
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -18,7 +18,11 @@ main_page_head = '''
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
         body {
-            padding-top: 80px;
+            padding-top: 50px;
+            background-color: #326082;
+        }
+        h2 {
+            color: #05173f;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -40,7 +44,7 @@ main_page_head = '''
             padding-top: 20px;
         }
         .movie-tile:hover {
-            background-color: #EEE;
+            background-color: #bc9f65 ;
             cursor: pointer;
         }
         .scale-media {
@@ -55,6 +59,10 @@ main_page_head = '''
             left: 0;
             top: 0;
             background-color: white;
+        }
+        #movieContainer{
+            max-width: 1300px;
+            background-color: #447191;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -107,12 +115,12 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">Top Popular Movies</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container" id="movieContainer">
       {movie_tiles}
     </div>
   </body>
