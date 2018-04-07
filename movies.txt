@@ -17,3 +17,6 @@
 24428;:The Avengers;:https://image.tmdb.org/t/p/w300/cezWGskPY5x7GaglTTRN4Fugfb8.jpg;:https://www.youtube.com/watch?v=bGt-saFvkNk
 335984;:Blade Runner 2049;:https://image.tmdb.org/t/p/w300/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg;:https://www.youtube.com/watch?v=haXvp8M9Cog
 118340;:Guardians of the Galaxy;:https://image.tmdb.org/t/p/w300/y31QB9kn3XSudA15tV7UWQ9XLuW.jpg;:https://www.youtube.com/watch?v=b7yOuhI1dzU
+353616;:Pitch Perfect 3;:https://image.tmdb.org/t/p/w300/fchHLsLjFvzAFSQykiMwdF1051.jpg;:https://www.youtube.com/watch?v=qZkuyLsN3gM
+245891;:John Wick;:https://image.tmdb.org/t/p/w300/5vHssUeVe25bMrof1HyaPyWgaP.jpg;:https://www.youtube.com/watch?v=2AUmvWm5ZDQ
+399035;:The Commuter;:https://image.tmdb.org/t/p/w300/rDeGK6FIUfVcXmuBdEORPAGPMNg.jpg;:https://www.youtube.com/watch?v=iQZL28DywEA
