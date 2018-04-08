@@ -18,4 +18,8 @@ Without an api key the program will only use the local cached file.
 To start the program you only need to run the **entertainment_center.py** file.
 
 ## Known issues
-It is really slow because how themoviedb works. Using their discovery to fetch top movies does not include trailer information. Therefor a separate call to each movie need to be done, which is why it is very slow. The work around is by using a local file to save movie information it could get the movie information much faster.
+
+1. ### Slow to display new movies
+    It is really slow because how themoviedb works. Using their discovery to fetch top movies does not include trailer     information. Therefor a separate call to each movie need to be done, which is why it is very slow.
+
+    The work around is by using a local file to save movie information it could get the movie information much faster.

@@ -3,6 +3,12 @@ import sys
 
 
 class Movie:
+    """
+    Attributes:
+        title (str): The title of the movie.
+        poster_image_url(str): URL to the movie poster to show an image
+        trailer_youtube_url(str): A trailer URL from youtube.
+    """
 
     def __init__(self, title, poster_image_url, trailer_youtube_url):
         self.title = title
@@ -10,12 +16,23 @@ class Movie:
         self.trailer_youtube_url = trailer_youtube_url
 
     def save_movie_to_file(self, id):
-        # id title poster_url youtube_url\n
-        # Are going to be saved into a file
+        """
+        Will save the movie data into the file movies.txt as:
+
+            id;:title;:poster_url;:youtube_url\n
+
+            where:
+                id(int): Movie ID from themoviedb.
+                title(str): The title of the movie.
+                poster_url(str): URL to the movie poster.
+                youtube_url(str): A trailer URL from youtube.
+                ;:(str): Use to split the line into a list.
+        """
+
         with open(os.path.join(sys.path[0], "movies.txt"), "a") as file:
-            file.write(
-                str(id) + ";:" + self.title + ";:" + self.poster_image_url +
-                ";:" + self.trailer_youtube_url + "\n")
+            file.write(str(id) + ";:" + self.title + ";:" +
+                       self.poster_image_url + ";:" +
+                       self.trailer_youtube_url + "\n")
 
     @staticmethod
     def get_data_from_movie(id, data):

@@ -35,10 +35,18 @@ IMG_W300 = "/w300"
 
 
 def create_popular_movie_web_site():
-    # An array to be filled with movies
-    movies = []
+    """
+    From a discover call to themoviedb it will return all top popular movies
+    with almost all the data, except trailer url which must be called
+    separately using a movie id.
+
+    To prevent slow processing, each movie data will be saved to a local file
+    so that it can prevent extra request to themoviedb.
+    """
+
+    movies = []  # An array to be filled with movies.
     try:
-        # A discover call to themoviedb, fetching the top movies
+        # A discover call to themoviedb, fetching the top movies.
         response = get_json_from_url(DISCOVER_URL)
         for data in response["results"]:
             title = data["title"]
@@ -52,15 +60,20 @@ def create_popular_movie_web_site():
                     trailer = on_local
                     movie = media.Movie(title, poster_url, trailer)
                 else:
+                    # Will use the id to fetch trailer url from themoviedb.
                     trailer = get_movie_trailer_url(id)
                     movie = media.Movie(title, poster_url, trailer)
+
+                    # Since it is a new movie, it should be saved.
                     movie.save_movie_to_file(id)
                 movies.append(movie)
 
-            # Sometimes some movies have no trailers, they will not be shown.
+            # Sometimes some movies have no trailers,
+            # they will not be shown or saved.
             except IndexError:
                 print("No trailer found, will not put it on the site")
 
+    # Will use local file instead of themoviedb.
     except IOError:
         print("Please check your api key, movies from file will be used")
         file = media.Movie.get_data_from_movie(0, "ALL")
@@ -75,7 +88,6 @@ def create_popular_movie_web_site():
 
 
 def get_movie_trailer_url(id):
-
     # themoviedb api doesn't give movie trailers(using discover),
     # so a call using the movie id is needed to get youtube key
     movie_url = BASE_URL + MOVIE + str(id) + API + API_KEY + APPEND_VIDEOS
